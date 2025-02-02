@@ -35,7 +35,7 @@ public class TrabajoFinal {
         String salida;
 
         while (bandera == true) {
-            System.out.println("Ingrese un numero para el registro\n1)"
+            System.out.println("Ingrese un número para el registro\n1)"
                     + "Futbol\n2)Natacion\n3)Atletismo\n"
                     + "4)Basquetbol\n5)Ciclismo\n6)Tenis\n7)Yoga\n");
             numero = entrada.nextInt();
