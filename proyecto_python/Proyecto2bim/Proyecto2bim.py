@@ -134,5 +134,9 @@ def registrarParticipanteYoga():
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nNivel: {nivel}\nCiudad: {ciudad}\nEstilo favorito: {estilo}\n"
     print(cadena)
 
+# Aqui tuvimos que agregar esto para leyera la funcion principal
+# sin esto no se iniciaba correctamente
+
+
 if __name__ == "__main__":
     principal()
