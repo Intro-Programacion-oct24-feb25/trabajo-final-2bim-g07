@@ -1,4 +1,6 @@
+global reporte
 def principal():
+    reporte = "Reporte:\n"
     bandera = True
     contador = 0
     contadores = [0] * 7
@@ -8,25 +10,25 @@ def principal():
         print("1) Futbol\n2) Natacion\n3) Atletismo\n4) Basquetbol\n5) Ciclismo\n6) Tenis\n7) Yoga")
         numero = int(input())
         if numero == 1:
-            registrarParticipanteFutbol()
+            reporte += registrarParticipanteFutbol()
             contadores[numero - 1] += 1
         elif numero == 2:
-            registrarParticipanteNatacion()
+            reporte += registrarParticipanteNatacion()
             contadores[numero - 1] += 1
         elif numero == 3:
-            registrarParticipanteAtletismo()
+            reporte += registrarParticipanteAtletismo()
             contadores[numero - 1] += 1
         elif numero == 4:
-            registrarParticipanteBasquetbol()
+            reporte += registrarParticipanteBasquetbol()
             contadores[numero - 1] += 1
         elif numero == 5:
-            registrarParticipanteCiclismo()
+            reporte += registrarParticipanteCiclismo()
             contadores[numero - 1] += 1
         elif numero == 6:
-            registrarParticipanteTenis()
+            reporte += registrarParticipanteTenis()
             contadores[numero - 1] += 1
         elif numero == 7:
-            registrarParticipanteYoga()
+            reporte += registrarParticipanteYoga()
             contadores[numero - 1] += 1
         else:
             print("Esta actividad no esta disponible en el club")
@@ -38,12 +40,13 @@ def principal():
             bandera = False
         
         contador += 1
-    
+
+    reporte2 = obtenerReporte(contadores, actividades)
     mensaje = obtenerInformacion(contador)
-    print(mensaje)
-    
-    reporte = obtenerReporte(contadores, actividades)
+
     print(reporte)
+    print(mensaje)
+    print(reporte2)
 
 def obtenerInformacion(contador):
     mensaje = f"Total de actividades creadas: {contador}\n"
@@ -72,7 +75,7 @@ def registrarParticipanteFutbol():
     equipo = input("Ingrese el equipo favorito del participante: ")
     
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nPosicion favorita: {posicion}\nCiudad: {ciudad}\nEquipo favorito: {equipo}\n"
-    print(cadena)
+    return cadena
 
 def registrarParticipanteNatacion():
     nombre = input("Ingrese el nombre del participante: ")
@@ -82,7 +85,7 @@ def registrarParticipanteNatacion():
     estilo = input("Ingrese el estilo favorito del participante: ")
     
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nNivel: {nivel}\nCiudad: {ciudad}\nEstilo favorito: {estilo}\n"
-    print(cadena)
+    return cadena
 
 def registrarParticipanteAtletismo():
     nombre = input("Ingrese el nombre del participante: ")
@@ -92,7 +95,7 @@ def registrarParticipanteAtletismo():
     record = float(input("Ingrese el record personal del participante: "))
     
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nEspecialidad: {especialidad}\nCiudad: {ciudad}\nRecord personal: {record}\n"
-    print(cadena)
+    return cadena
 
 def registrarParticipanteBasquetbol():
     nombre = input("Ingrese el nombre del participante: ")
@@ -102,7 +105,7 @@ def registrarParticipanteBasquetbol():
     estatura = float(input("Ingrese la estatura del participante: "))
     
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nPosicion favorita: {posicion}\nEstatura: {estatura}\nCiudad: {ciudad}\n"
-    print(cadena)
+    return cadena
 
 def registrarParticipanteCiclismo():
     nombre = input("Ingrese el nombre del participante: ")
@@ -112,7 +115,7 @@ def registrarParticipanteCiclismo():
     marca = input("Ingrese la marca de bicicletas preferida: ")
     
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nTipo de ciclismo: {tipo}\nCiudad: {ciudad}\nMarca favorita: {marca}\n"
-    print(cadena)
+    return cadena
 
 def registrarParticipanteTenis():
     nombre = input("Ingrese el nombre del participante: ")
@@ -122,7 +125,7 @@ def registrarParticipanteTenis():
     mano = input("Ingrese la mano habil del participante (derecha/izquierda): ")
     
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nNivel: {nivel}\nCiudad: {ciudad}\nMano habil: {mano}\n"
-    print(cadena)
+    return cadena
 
 def registrarParticipanteYoga():
     nombre = input("Ingrese el nombre del participante: ")
@@ -132,11 +135,10 @@ def registrarParticipanteYoga():
     estilo = input("Ingrese el estilo de yoga favorito del participante: ")
     
     cadena = f"\nNombre: {nombre}\nEdad: {edad}\nNivel: {nivel}\nCiudad: {ciudad}\nEstilo favorito: {estilo}\n"
-    print(cadena)
+    return cadena
+
 
 # Aqui tuvimos que agregar esto para leyera la funcion principal
 # sin esto no se iniciaba correctamente
-
-
 if __name__ == "__main__":
     principal()
