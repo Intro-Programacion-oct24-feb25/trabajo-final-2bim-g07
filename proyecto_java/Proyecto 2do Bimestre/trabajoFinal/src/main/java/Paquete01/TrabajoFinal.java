@@ -20,6 +20,7 @@ import Paquete10.Reporte;
  * @author Usuario Win11
  */
 public class TrabajoFinal {
+public static String reporte = "Reporte:\n";
 
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
@@ -29,7 +30,7 @@ public class TrabajoFinal {
         int contador = 0;
         String mensaje;
         int[] contadores = new int[7];
-        String reporte;
+        String reporte2;
         String[] actividades = {"Futbol", "Natacion", "Atletismo", "Basquetbol",
             "Ciclismo", "Tenis", "Yoga"};
         String salida;
@@ -39,32 +40,33 @@ public class TrabajoFinal {
                     + "Futbol\n2)Natacion\n3)Atletismo\n"
                     + "4)Basquetbol\n5)Ciclismo\n6)Tenis\n7)Yoga\n");
             numero = entrada.nextInt();
+            
             if (numero == 1) {
-                Futbol.registrarParticipanteFutbol();
+                reporte = String.format("%s%s", reporte, Futbol.registrarParticipanteFutbol());
                 contadores[numero - 1] = contadores[numero - 1] + 1;
             } else {
                 if (numero == 2) {
-                    Natacion.registrarParticipanteNatacion();
+                    reporte = String.format("%s%s", reporte, Natacion.registrarParticipanteNatacion());
                     contadores[numero - 1] = contadores[numero - 1] + 1;
                 } else {
                     if (numero == 3) {
-                        Atletismo.registrarPaticipanteAtletismo();
+                        reporte = String.format("%s%s", reporte, Atletismo.registrarPaticipanteAtletismo());
                         contadores[numero - 1] = contadores[numero - 1] + 1;
                     } else {
                         if (numero == 4) {
-                            Basquetbol.registrarPaticipanteBasquetbol();
+                            reporte = String.format("%s%s", reporte, Basquetbol.registrarPaticipanteBasquetbol());
                             contadores[numero - 1] = contadores[numero - 1] + 1;
                         } else {
                             if (numero == 5) {
-                                Ciclismo.registrarParticipanteCiclismo();
+                                reporte = String.format("%s%s", reporte, Ciclismo.registrarParticipanteCiclismo());
                                 contadores[numero - 1] = contadores[numero - 1] + 1;
                             } else {
                                 if (numero == 6) {
-                                    Tenis.registrarParticipanteTenis();
+                                    reporte = String.format("%s%s", reporte, Tenis.registrarParticipanteTenis());
                                     contadores[numero - 1] = contadores[numero - 1] + 1;
                                 } else {
                                     if (numero == 7) {
-                                        Yoga.registrarParticipanteTenis();
+                                        reporte = String.format("%s%s", reporte, Yoga.registrarParticipanteTenis());
                                         contadores[numero - 1] = contadores[numero - 1] + 1;
                                     } else {
                                         System.out.println("Esta actividad no "
@@ -86,8 +88,11 @@ public class TrabajoFinal {
             contador = contador + 1;
         }
         mensaje = Informacion.obtenerInformacion(contador);
-        System.out.printf("%s", mensaje);
-        reporte = Reporte.obtenerReporte(contadores, actividades);
+        reporte2 = Reporte.obtenerReporte(contadores, actividades);
+        
         System.out.printf("%s", reporte);
+        System.out.printf("%s", mensaje);     
+        System.out.printf("%s", reporte2);
+        
     }
 }

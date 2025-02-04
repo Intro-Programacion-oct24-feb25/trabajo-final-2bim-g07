@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class Basquetbol {
 
-    public static void registrarPaticipanteBasquetbol() {
+    public static String registrarPaticipanteBasquetbol() {
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
 
@@ -22,7 +22,7 @@ public class Basquetbol {
         String posicion;
         String ciudad;
         double estatura;
-        String cadena = "";
+        String cadena = "Resumen:\n";
 
         System.out.println("Ingrese el nombre del participante");
         nombre = entrada.nextLine();
@@ -37,14 +37,14 @@ public class Basquetbol {
         estatura = entrada.nextDouble();
 
         cadena = String.format("%sNombre:%s\nEdad:%d\nPosicion favorita:%s\n"
-                + "Ciudad:%s\nEstatura:%.2f\n",
+                + "Ciudad:%s\nEstatura:%.2f\n\n",
                 cadena,
                 nombre,
                 edad,
                 posicion,
                 ciudad,
                 estatura);
-        System.out.printf("Resumen:\n%s", cadena);
+        return cadena;
 
     }
 }

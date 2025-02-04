@@ -14,19 +14,19 @@ public class Informacion {
         String mensaje;
         mensaje = String.format("Total de actividades creadas: %s\n", contador);
         if (contador == 0) {
-            mensaje = String.format("%sMala campaña, debemos mejorar",
+            mensaje = String.format("%sMala campaña, debemos mejorar\n",
                     mensaje);
         } else {
             if (contador >= 1 && contador <= 5) {
-                mensaje = String.format("%sPara participación en el club, hay que mejorar",
+                mensaje = String.format("%sBaja participación en el club, hay que mejorar\n",
                         mensaje);
             } else {
                 if (contador >= 6 && contador <= 15) {
-                    mensaje = String.format("%sBuena participación, sigue así",
+                    mensaje = String.format("%sBuena participación, sigue así\n",
                             mensaje);
                 } else {
                     if (contador >= 16) {
-                        mensaje = String.format("%sExcelente campaña del club",
+                        mensaje = String.format("%sExcelente campaña del club\n",
                                 mensaje);
                     }
                 }

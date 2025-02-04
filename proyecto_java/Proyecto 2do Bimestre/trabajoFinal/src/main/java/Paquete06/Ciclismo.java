@@ -11,7 +11,7 @@ import java.util.Locale;
  * @author Usuario Win11
  */
 public class Ciclismo {
-    public static void registrarParticipanteCiclismo(){
+    public static String registrarParticipanteCiclismo(){
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
         
@@ -20,7 +20,7 @@ public class Ciclismo {
         String tipo;
         String ciudad;
         String marca;
-        String cadena = "";
+        String cadena = "Resumen:\n";
         
         System.out.println("Ingrese el nombre del participante");
         nombre = entrada.nextLine();
@@ -35,13 +35,13 @@ public class Ciclismo {
         marca = entrada.nextLine();
         
         cadena = String.format("%sNombre:%s\nEdad:%d\nTipo:%s\nCiudad:%s\n"
-                + "Marca favorita:%s\n",
+                + "Marca favorita:%s\n\n",
                 cadena,
                 nombre,
                 edad,
                 tipo,
                 ciudad,
                 marca);
-        System.out.printf("Resumen:\n%s",cadena);
+        return cadena;
     }
 }
